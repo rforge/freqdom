@@ -1,0 +1,10 @@
+dpca.CanadianWeather    DPCA application to meteorology
+dpca.pm10    DPCA application to pollution data
+dpca.simulation   Elementary DPCA example
+reg.est			Demonstration of a data-driven procedure for choosing a dimension of regression operator
+reglag.est.simulation		Lagged regression simulation - usage of spectral estimator
+reglag.gsl    Intrayear Great Salt Lake elevation modeled by precipitation
+reglag.test.bm  Lag significance test in lagged regresion problem - brownian motion simulation
+reglag.test.simulation  Lag significance test in lagged regresion problem - elementary simulation
+reglag.stock    Cumulative intraday returns of stocks modeled as a function of index
+reglag.volatility    Stock volatility modeled as a function of index volatility

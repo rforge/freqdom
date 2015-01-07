@@ -1,0 +1,21 @@
+\name{norm.spec}
+\alias{norm.spec}
+\title{Compute a spectral norm of given matrix P}
+\usage{
+norm.spec(P)
+}
+\arguments{
+  \item{P}{numeric matrix}
+}
+\value{
+numeric norm
+}
+\description{
+Compute the spectral norm of any matrix P, defined as the
+square root of the largest eigenvalue of \eqn{P P'}.
+}
+\examples{
+P = matrix(rnorm(15),3,5)
+norm.spec(P)
+}
+
