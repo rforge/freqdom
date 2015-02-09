@@ -1,5 +1,4 @@
 library(freqdom)
-library(mvtnorm)
 
 set.seed(4)
 
@@ -12,7 +11,7 @@ OP[3,,] = diag(2)
 
 A = timedom(OP,c(-1,0,2))
 
-X = rmvnorm(100,rep(0,2),diag(2))
+X = matrix(rnorm(200),100,2)
 Xt = timedom(X)
 
 Xf = fourier.transform(Xt)
