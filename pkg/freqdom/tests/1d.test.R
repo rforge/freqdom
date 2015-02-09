@@ -1,3 +1,4 @@
+library(freqdom)
 # Parameters
 d = 1      # dimension
 n = 150    # number of observation

@@ -26,7 +26,8 @@ lagreg.est = function (X,Y,lags=-5:5,K=NULL,Kconst=1){
     Y = as.matrix(Y)
   
   nbasisX = dim(X)[2]
-	nbasisY = dim(Y)[2]
+  n = dim(X)[1]
+  nbasisY = dim(Y)[2]
 
   R = c()
   for (lag in lags){
