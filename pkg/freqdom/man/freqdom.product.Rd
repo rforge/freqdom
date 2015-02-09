@@ -1,0 +1,30 @@
+\name{freqdom.product}
+\alias{freqdom.product}
+\title{Compute a product of two spectral densities}
+\usage{
+freqdom.product(S, SC)
+}
+\arguments{
+  \item{S}{first spectral density}
+
+  \item{SC}{second spectral density}
+}
+\value{
+Frequency Domain Operator object
+}
+\description{
+For given spectral densities \code{S} and \code{SC}
+computes product \code{S \%*\% SC} at each frequency.
+}
+\examples{
+n = 100
+X = rar(n)
+Y = rar(n)
+SX = spectral.density(X)
+SY = spectral.density(Y)
+R = freqdom.product(SY,SX)
+}
+\seealso{
+\code{\link{freqdom.inverse}}, \code{\link{freqdom.ratio}}
+}
+

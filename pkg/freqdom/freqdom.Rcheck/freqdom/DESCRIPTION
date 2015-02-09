@@ -1,0 +1,10 @@
+Package: freqdom
+Type: Package
+Title: Frequency domain analysis for multivariate time series
+Version: 1.0
+Date: 2015-01-20
+Author: Hormann S., Kidzinski L.
+Maintainer: L. Kidzinski <lukasz.kidzinski@epfl.ch>
+Description: Frequency domain analysis for multivariate time series
+License: GPL-3
+Built: R 3.0.2; ; 2015-01-23 16:02:38 UTC; unix

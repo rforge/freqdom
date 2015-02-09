@@ -1,0 +1,19 @@
+\name{freqdom}
+\alias{freqdom}
+\title{Create a frequency domain operator}
+\usage{
+freqdom(X, freq)
+}
+\arguments{
+  \item{X}{array of evaluations}
+
+  \item{freq}{frequencies at which the object was
+  evaluated}
+}
+\value{
+Frequency domain object
+}
+\description{
+Creates a frequency domain operator
+}
+
