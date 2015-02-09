@@ -1,3 +1,0 @@
-load("/Users/kidzik/Documents/workspace/libraries/freqdom/data/stockdata.rda")
-load("/Users/kidzik/Documents/workspace/libraries/freqdom/data/citi.rda")
-load("/Users/kidzik/Dropbox/Lukasz-Local/Intraday returns/Minute 10 Stock data/new data/citi.rda")
