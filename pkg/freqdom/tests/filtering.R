@@ -1,5 +1,4 @@
 library(freqdom)
-library(mvtnorm)
 
 set.seed(4)
 
@@ -12,7 +11,7 @@ OP[2,,] = diag(2)
 OP[3,,] = diag(2)
 A = timedom(OP,-1:1)
 
-X = rmvnorm(10,rep(0,2),diag(2))
+X = matrix(rnorm(200),100,2)
 Y = filter.process(X,A)
 
 if (abs(Y[4,2] - X[3,2] - X[4,2] - X[5,2]) > precision)
