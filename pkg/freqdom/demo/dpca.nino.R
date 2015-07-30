@@ -4,7 +4,8 @@ library("tseries")
 data(nino)
 
 args=seq(0,1,length=12)
-basis = create.fourier.basis(rangeval=c(0, 1), nbasis=9)
+#basis = create.fourier.basis(rangeval=c(0, 1), nbasis=9)
+basis = create.bspline.basis(rangeval=c(0, 1), nbasis=9, norder=3)
 
 nino3 = matrix(nino3[1:(12*48)],12)
 nino3.4 = matrix(nino3.4[1:(12*48)],12)
@@ -25,7 +26,8 @@ Y1[,-1] = 0
 Xpca = Y1 %*% t(PR$rotation)
 
 ## Dynamic PCA ##
-XI.est = dprcomp(X,q=20,weights="Daniell")  # finds the optimal filter
+V = inprod(basis,basis) # we need to take into account correlations between elements
+XI.est = dprcomp(X,V=V,q=20,weights="Daniell")  # finds the optimal filter
 Y.est = XI.est %c% X  # applies the filter
 Y.est[,-1] = 0 # forces the use of only one component
 Xdpca.est = t(rev(XI.est)) %c% Y.est   # deconvolution

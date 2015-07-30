@@ -12,6 +12,7 @@
 #' @title Compute the cross spectral density of processes X and Y 
 #' @param X first process 
 #' @param Y second process, if \code{NULL} then spectral density of X is computed
+#' @param V correlation structure between coefficients of vectors (default diagonal)
 #' @param freq evaluation grid - vector of values between \code{[-pi,pi]}
 #' @param q size of the window (covariances from -q to q will be computed)
 #' @param weights kernel used to decay significance of covariances with higher lags ('Bartlett', 'trunc', 'Tukey', 'Parzen', 'Bohman', 'Daniell', 'ParzenCogburnDavis').
@@ -25,11 +26,13 @@
 #' X = rar(100)
 #' Y = rar(100)
 #' spectral.density(X,Y)
-spectral.density = function(X,Y=NULL,freq=NULL,q=NULL,weights=NULL){
+spectral.density = function(X,Y=NULL,V=NULL,freq=NULL,q=NULL,weights=NULL){
   if (is.null(Y))
     Y = X
   if (is.null(q))
     q = 10
+  if (is.null(V))
+    V = diag(dim(X)[2])
 
   if (!is.matrix(X) || !is.matrix(Y))
     stop("X and Y must be matrices")
@@ -44,6 +47,8 @@ spectral.density = function(X,Y=NULL,freq=NULL,q=NULL,weights=NULL){
 	nbasisY = dim(Y)[2]
 	n = dim(X)[1]
 	Ch = cov.structure(X,Y,q)
+  for (i in 1:(q*2+1))
+    Ch$operators[i,,] = Ch$operators[i,,] %*% V
 	
   wfunc = weights.Bartlett
   if (is.null(weights))

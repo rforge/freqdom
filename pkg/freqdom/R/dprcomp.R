@@ -4,6 +4,7 @@
 #'
 #' @title Compute DPCA filter coefficients
 #' @param X multivariate stationary time series
+#' @param V correlation structure between coefficients of vectors (default diagonal)
 #' @param lags requested filter coefficients
 #' @param q window for spectral density estimation as in \code{\link{spectral.density}}
 #' @param weights as in \code{\link{spectral.density}}
@@ -13,11 +14,13 @@
 #' Research report, 2012
 #' @seealso \code{\link{dpca.inverse}}, \code{\link{dpca.scores}}
 #' @export
-dprcomp = function(X,lags=-10:10,q=NULL,weights=NULL,freq=NULL){
+dprcomp = function(X,V=NULL,lags=-10:10,q=NULL,weights=NULL,freq=NULL){
   if (!is.matrix(X))
     stop("X must be a matrix")
   if (!is.vector(lags) || any(!is.positiveint(abs(lags))))
     stop("lags must be a vector of integers")
+  if (is.null(V))
+    V = diag(dim(X)[2])
 
   SD = spectral.density(X,q=q,weights=weights,freq=freq)
   E = freqdom.eigen(SD)
