@@ -1,4 +1,4 @@
-#' @export
+# @export
 reglag.boot = function(X,Y,A,rep=20,Kconst=1,K=NULL,freq=NULL,p=10,q=10,weights="Bartlett",plot=FALSE)
 {
   CX = lagged.cov(X,lag=0)
@@ -29,7 +29,7 @@ reglag.boot = function(X,Y,A,rep=20,Kconst=1,K=NULL,freq=NULL,p=10,q=10,weights=
   if (plot){
     ylim = c(0,max(res,Ans$norms))
     plot(lags,Ans$norms,ylim=ylim,ylab="norm",xlab="lag")
-    matlines(colnames(res),t(res),t='l')
+    matlines(colnames(res),t(res),type='l')
   }
   
   cat("Suggested lags")

@@ -2,7 +2,7 @@
 #' not specified the functions takes direction with eigencalues grater
 #' than given treshold \code{th}.
 #' If \code{th} is also not specified then all direction are inverted
-#' (equivalent to \code{\link[plotbase]{solve}})
+#' (equivalent to \code{\link[base]{solve}})
 #'
 #' @title Invert first K eigendirections of the matrix.
 #' @param M matrix to solve

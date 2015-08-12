@@ -8,6 +8,7 @@
 #' @param lags requested filter coefficients
 #' @param q window for spectral density estimation as in \code{\link{spectral.density}}
 #' @param weights as in \code{\link{spectral.density}}
+#' @param freq frequency grid to estimate on as in \code{\link{spectral.density}}
 #' @return principal components series
 #' @references Siegfried Hormann, Lukasz Kidzinski and Marc Hallin
 #' Dynamic Functional Principal Component

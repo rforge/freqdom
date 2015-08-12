@@ -1,11 +1,11 @@
 #' @export
-rev.timedom = function(XI){
-  XI$lags = rev(XI$lags)
-  XI
+rev.timedom = function(x){
+  x$lags = rev(x$lags)
+  x
 }
 
 #' @export
-rev.freqdom = function(XI){
-  XI$freq = rev(XI$freq)
-  XI
+rev.freqdom = function(x){
+  x$freq = rev(x$freq)
+  x
 }

@@ -36,6 +36,15 @@ freqdom.kronecker = function(S,SC){
 
 oldkronprod <- `%x%`
 
+#' Frequency-wise or time-wise Kronecker product. Takes two elements
+#' \code{freqdom} or \code{timedom} and applies the Kronecker product on
+#' each frequency or time point. If objects of other type are provided
+#' then the standard function is applied.
+#'  
+#' @title Frequency-wise or component-wise Kronecker product. 
+#' @param e1 first element
+#' @param e2 second element
+#' @return object of the same type as e1 but with new dimensions
 #' @export
 `%x%` <- function (e1,e2) {
   if (is.freqdom(e1) && is.freqdom(e2))

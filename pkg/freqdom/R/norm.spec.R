@@ -7,6 +7,7 @@
 #' @examples
 #' P = matrix(rnorm(15),3,5)
 #' norm.spec(P)
+#' @import mvtnorm
 #' @export 
 norm.spec = function(P){
   P = matrix(P)

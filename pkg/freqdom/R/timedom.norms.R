@@ -3,7 +3,7 @@
 #'
 #' @title Compute operator norms of elements of a filter
 #' @param A the series of operators
-#' @param type matrix norm to be used as in \link[pkg:base]{norm}
+#' @param type matrix norm to be used as in \link[base]{norm}
 #' @return List with \code{lags} and \code{norms} vetors
 #' @export
 timedom.norms = function(A, type='2'){

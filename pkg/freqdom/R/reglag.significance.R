@@ -9,7 +9,7 @@
 #' @param ... arguments passed to \code{\link{plot}} function
 #' @return list with a quantile and test statistics for each lag
 #' @examples
-#' n = 1000
+#' n = 300
 #' d = 15
 #' X = rar(n,d=d,Psi=matrix(0,d,d))  			# independent d-dim variables
 #' w = 0.4

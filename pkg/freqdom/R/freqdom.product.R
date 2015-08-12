@@ -33,6 +33,15 @@ freqdom.product = function(S,SC){
 
 oldprod <- `%*%`
 
+#' Frequency-wise or time-wise matrix product. Takes two elements
+#' \code{freqdom} or \code{timedom} and multiplies them on
+#' each frequency or time point. If objects of other type are provided
+#' then the standard multiplication is applied.
+#'  
+#' @title Frequency-wise or component-wise matrix product. 
+#' @param e1 first element
+#' @param e2 second element
+#' @return object of the same type as e1 but with new dimensions
 #' @export
 `%*%` <- function (e1,e2) {
   if (is.freqdom(e1) && is.freqdom(e2))

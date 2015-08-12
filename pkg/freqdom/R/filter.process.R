@@ -46,6 +46,13 @@ colshift = function(col,lag){
     col
 }
 
+
+#' Convolution of a process X with an operator A. As in \code{\link{filter.process}}
+#'  
+#' @title Convolution of a process X with an operator A.
+#' @param A \code{timedom} operators
+#' @param X \code{timedom} multivariate time series
+#' @return Convoluted series of the same type as X
 #' @export
 `%c%` <- function(A, X){
   filter.process(X, A)

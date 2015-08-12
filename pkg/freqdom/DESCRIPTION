@@ -1,9 +1,10 @@
 Package: freqdom
 Type: Package
-Title: Frequency domain analysis for multivariate time series
-Version: 1.0
-Date: 2015-01-20
+Title: Frequency Domain Analysis for Multivariate Time Series
+Version: 1.0.2
+Date: 2015-08-12
 Author: Hormann S., Kidzinski L.
-Maintainer: L. Kidzinski <lukasz.kidzinski@epfl.ch>
-Description: Frequency domain analysis for multivariate time series
+Maintainer: Kidzinski L. <lukasz.kidzinski@epfl.ch>
+Description: Methods for the analysis of multivariate time series using frequency domain techniques. Implementations of dynamic principle components analysis (DPCA) and estimators of operators in lagged regression. Examples of usage in functional data analysis setup. 
 License: GPL-3
+Depends: R (>= 2.15.0), mvtnorm

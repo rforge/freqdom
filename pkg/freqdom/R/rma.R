@@ -1,4 +1,12 @@
-#' Moving average
+#' Generates \eqn{n} observations of a \eqn{d}-dimensional moving average process with operators A, i.e.
+#' \deqn{ Y_t = \sum_{i \in L_A} A_i X_t },
+#' where L_A is a set of lags on which operators A_i are defined.
+#'
+#' @title Moving avarege process
+#' @param n number of observations to generate
+#' @param d number of dimensions of the process
+#' @param A time domain object describing operators 
+#' @param noise the underlying X process
 #' @export
 rma = function(n, d, A, noise=NULL)
 {
@@ -12,7 +20,7 @@ rma.old = function(n, lag=2, d=NULL, noise=NULL)
   rma.proc(rar(n+lag-1,d=d,noise=noise))
 }
 
-#' @export
+# @export
 rma.proc = function(TS, lag=2){
   n = dim(TS)[1]
   RES = c()

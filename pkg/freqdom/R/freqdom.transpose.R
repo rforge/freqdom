@@ -1,18 +1,18 @@
 #' Transpose the object at each frequency or lag
 #'  
 #' @title Transpose pointwise timedom or freqdom object
-#' @param X freqdom or timedom object
-#' @return object of the same type as XI
+#' @param x freqdom or timedom object
+#' @return object of the same type as x
 #' @export
-freqdom.transpose = function(X){
-  lags = freqdom.lags(X)
+freqdom.transpose = function(x){
+  lags = freqdom.lags(x)
   for (i in 1:length(lags))
-    X$operators[i,,] = t(X$operators[i,,])
-  X
+    x$operators[i,,] = t(x$operators[i,,])
+  x
 }
 
-#' @export
+#' @S3method t freqdom
 t.freqdom = freqdom.transpose
 
-#' @export
+#' @S3method t timedom
 t.timedom = freqdom.transpose
