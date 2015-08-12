@@ -1,7 +1,7 @@
 Package: freqdom
 Type: Package
 Title: Frequency Domain Analysis for Multivariate Time Series
-Version: 1.0.2
+Version: 1.0.3
 Date: 2015-08-12
 Author: Hormann S., Kidzinski L.
 Maintainer: Kidzinski L. <lukasz.kidzinski@epfl.ch>
