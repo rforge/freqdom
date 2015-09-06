@@ -4,6 +4,8 @@
 #' @param n number of observations to generate
 #' @param d dimension (sampling at d points)
 #' @return n x d matrix with independent n observations
+#' @importFrom graphics plot
+#' @importFrom stats rnorm
 #' @export
 #' @examples
 #' bm = rbm(100)

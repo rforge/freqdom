@@ -26,8 +26,8 @@ list with a quantile and test statistics for each lag
 Check significance of estimated coefficents in \code{\link{speclagreg}} estimator
 }
 \examples{
-n = 300
-d = 15
+n = 200
+d = 5
 X = rar(n,d=d,Psi=matrix(0,d,d))  			# independent d-dim variables
 w = 0.4
 Y = w*X + (1-w)*rar(n,d=d,Psi=matrix(0,d,d))	# independent d-dim variables

@@ -1,3 +1,5 @@
+library("freqdom")
+
 set.seed(1)
 n = 100
 
@@ -23,11 +25,15 @@ X.est = t(rev(XI)) %c% Y # recover X from first score
 # Compute variance explained by PCA
 M1 = MSE(X,X.est.static)
 M = MSE(X,0)
-print(M1/M) # approximation error of the first score
+
+cat("NMSE PCA =  ")
+cat(M1/M) # approximation error of the first score
 
 # Compute variance explained by DPCA
 M1 = MSE(X,X.est)
-print(M1/M) # approximation error of the first score
+cat("\nNMSE DPCA = ")
+cat(M1/M) # approximation error of the first score
+cat("\n")
 
 # Plot scores
 par(mfrow=c(1,3))

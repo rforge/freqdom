@@ -6,6 +6,7 @@
 #' @param ycoef vector of vertical coefficients to plot
 #' @param type 'cartesian' or 'polar' coordinates
 #' @param ... other parameters to \code{\link{plot}}
+#' @importFrom graphics lines par plot
 #' @export
 plot.freqdom = function(x, xcoef=NULL, ycoef=NULL, type='cartesian', ...){
   SD = x

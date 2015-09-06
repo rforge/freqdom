@@ -1,3 +1,8 @@
+if (!requireNamespace("MASS", quietly = TRUE)) {
+  stop("MASS package is needed for this demo to work. Please install it.",
+    call. = FALSE)
+}
+
 library("freqdom")
 library(MASS)
 library(mvtnorm)
@@ -32,9 +37,9 @@ Afull = speclagreg(X[1:n,],Y[1:n,],lags=-10:10,freq=freq,K=K)
 A = Afull
 
 Yest = (A %c% X)
-print(paste("Relative error: ", MSE(Y[1:ntest + n,],Yest[1:ntest + n,]) / MSE(Y[1:ntest + n,],0)))
+cat(paste("Relative error: ", MSE(Y[1:ntest + n,],Yest[1:ntest + n,]) / MSE(Y[1:ntest + n,],0)),"\n")
 
 Y = t(t(Y) + MY)
 Yest = t(t(Yest) + MY)
-plot(rnames ,Yest[,2],t='l',ylim = c(0,150))
+plot(Yest[,2],t='l',ylim = c(0,150))
 lines(Y[,2],t='l',col='red')

@@ -7,6 +7,7 @@
 #' @param A time-domain operator series
 #' @param noise function taking dimension D and returning D-dimentional vector
 #' @return Multivariate linear process
+#' @importFrom stats rnorm
 #' @export
 #' @seealso \code{\link{speclagreg}}
 #' @examples

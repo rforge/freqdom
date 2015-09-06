@@ -16,6 +16,8 @@
 #' Y = w*X + (1-w)*rar(n,d=d,Psi=matrix(0,d,d))	# independent d-dim variables
 #' A = speclagreg(X, Y, lags=-2:2)
 #' W = reglag.significance(X, Y, A, alpha = 0.05)
+#' @importFrom graphics abline plot title
+#' @importFrom stats pchisq qchisq quantile
 #' @export 
 reglag.significance = function(X, Y, A, alpha = 0.05, plot = FALSE, ...)
 {

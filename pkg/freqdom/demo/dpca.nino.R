@@ -1,5 +1,16 @@
 library("freqdom")
+
+if (!requireNamespace("fda", quietly = TRUE)) {
+  stop("fda package is needed for this demo to work. Please install it.",
+    call. = FALSE)
+}
+if (!requireNamespace("tseries", quietly = TRUE)) {
+  stop("tseries package is needed for this demo to work. Please install it.",
+    call. = FALSE)
+}
+
 library("tseries")
+library("fda")
 
 data(nino)
 
@@ -16,7 +27,6 @@ Y = t(Y.fd$coef)
 
 # Estimate operators
 A = speclagreg(X,Y,lags=-5:5)
-W = reglag.significance(X, Y, A, alpha = 0.05,plot=TRUE)
 
 n = dim(X)[1]
 ## Static PCA ##
@@ -34,8 +44,11 @@ Xdpca.est = t(rev(XI.est)) %c% Y.est   # deconvolution
 
 # Write down results
 ind = 1:n
-print(MSE(X[ind,],Xdpca.est[ind,]) / MSE(X[ind,],0))
-print(MSE(X[ind,],Xpca[ind,]) / MSE(X[ind,],0))
+cat("NMSE DPCA = ")
+cat(MSE(X[ind,],Xdpca.est[ind,]) / MSE(X[ind,],0))
+cat("\nNMSE PCA =  ")
+cat(MSE(X[ind,],Xpca[ind,]) / MSE(X[ind,],0))
+cat("\n")
 
 # Creates functional objects
 Xdpca.est.fd = fd(t(Re(Xdpca.est)),basis=X.fd$basis)

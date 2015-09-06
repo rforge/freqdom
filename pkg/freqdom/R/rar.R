@@ -11,6 +11,8 @@
 #' @param noise the noise we want to add
 #' @param sd standard deviation of the gaussian noise if the noise wasn't provided
 #' @return an AR series of vectors
+#' @importFrom graphics plot title
+
 #' @export
 #' @examples
 #' nbase = 10

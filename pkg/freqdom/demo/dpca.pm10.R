@@ -1,6 +1,15 @@
+if (!requireNamespace("fda", quietly = TRUE)) {
+  stop("fda package is needed for this demo to work. Please install it.",
+    call. = FALSE)
+}
+if (!requireNamespace("MASS", quietly = TRUE)) {
+  stop("MASS package is needed for this demo to work. Please install it.",
+    call. = FALSE)
+}
+
 library(MASS)
 library(fda)
-load("data/pm10.rda")
+data(pm10)
 
 library(freqdom)
 
@@ -10,7 +19,6 @@ rev.freqdom = function(XI){
   XI$freq = rev(XI$freq)
   XI
 }
-
 
 ## Static PCA ##
 PR = prcomp(t(X$coef))
@@ -30,8 +38,11 @@ Xpca.fd = fd(t(Xpca),basis=X$basis)
 
 # Write down results
 ind = 1:n
-print(MSE(t(X$coef)[ind,],Xdpca.est[ind,]) / MSE(t(X$coef)[ind,],0))
-print(MSE(t(X$coef)[ind,],Xpca[ind,]) / MSE(t(X$coef)[ind,],0))
+cat("NMSE PCA =  ")
+cat(MSE(t(X$coef)[ind,],Xdpca.est[ind,]) / MSE(t(X$coef)[ind,],0))
+cat("\nNMSE DPCA = ")
+cat(MSE(t(X$coef)[ind,],Xpca[ind,]) / MSE(t(X$coef)[ind,],0))
+cat("\n")
 
 # Figure 1: 10 observations reconstructed from the first component
 ind = 1:10 + 20

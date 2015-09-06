@@ -5,6 +5,8 @@
 #' @title Eigendevompose a frequency domain operator at each frequency
 #' @param S frequency domain operator
 #' @return Rotated matrix \code{M}
+#' @importFrom graphics par plot title
+#' @importFrom stats optim rnorm
 #' @export
 freqdom.eigen = function(S){
   if (!is.freqdom(S))

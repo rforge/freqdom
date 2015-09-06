@@ -8,6 +8,7 @@
 # @param M matrix to compute close eigenvalues from rotate
 # @param Prev matrix to approximate
 # @return rotated matrix \code{M}
+# @importFrom stats rnorm
 # @export
 # @examples
 # M = matrix(rnorm(9),3,3) + matrix(rnorm(9),3,3)*1i

@@ -1,5 +1,13 @@
-library(fda)
-library(MASS)
+library('freqdom')
+
+if (!requireNamespace("MARSS", quietly = TRUE)) {
+  stop("MARSS package is needed for this demo to work. Please install it.",
+    call. = FALSE)
+}
+
+library('MARSS')
+
+data('kestrel')
 
 # prepare data
 X = kestrel[,-1] 
@@ -21,8 +29,11 @@ Xdpca.est = t(rev(XI.est)) %c% Y.est   # deconvolution
 
 # Write down results
 ind = 1:n
-print(MSE(X[ind,],Xdpca.est[ind,]) / MSE(X[ind,],0))
-print(MSE(X[ind,],Xpca[ind,]) / MSE(X[ind,],0))
+cat("NMSE DPCA = ")
+cat(MSE(X[ind,],Xdpca.est[ind,]) / MSE(X[ind,],0))
+cat("\nNMSE PCA =  ")
+cat(MSE(X[ind,],Xpca[ind,]) / MSE(X[ind,],0))
+cat("\n")
 
 # PLOT 10 observations reconstructed from the first component
 ind = 1:10 + 20
